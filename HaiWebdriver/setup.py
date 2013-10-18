@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
+import sys
 from os.path import join, dirname
+sys.path.append(join(dirname(__file__), 'src'))
+
 from setuptools import setup
 from shutil import rmtree
-import sys
-import re
-import glob
+
+from ez_setup import use_setuptools
+use_setuptools()
+
 
 PACKAGE=None
 build = False
@@ -27,6 +31,7 @@ setup(
     author_email = EMAIL,
     url          = 'https://github.com/may3450/playground/tree/master/HaiWebdriver',
     license      = 'free',
+    py_modules   = ['ez_setup'],
     package_dir  = { '' : 'src'},
     packages     = [PACKAGE],
     package_data     = {PACKAGE: ['*/*.py', '*/*/*.py', '*/*/*/*.py']},
