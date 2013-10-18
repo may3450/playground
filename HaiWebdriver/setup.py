@@ -23,7 +23,7 @@ execfile(join(dirname(__file__), SOURCE_DIR, 'HaiSafari', VERSION_FILE))
 
 
 setup(
-    name         = PACKAGE,
+    name         = 'HaiWebdriver',
     version      = VERSION,
     description  = DESCRIPTION,
     author       = AUTHOR,
