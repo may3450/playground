@@ -5,7 +5,6 @@ from os.path import join, dirname
 sys.path.append(join(dirname(__file__), 'src'))
 
 from setuptools import setup
-from shutil import rmtree
 
 from ez_setup import use_setuptools
 use_setuptools()
@@ -34,8 +33,7 @@ setup(
     py_modules   = ['ez_setup'],
     package_dir  = { '' : 'src'},
     packages     = ['HaiSafari'],
-    package_data     = {PACKAGE: ['*/*.py', '*/*/*.py', '*/*/*/*.py']},
+    include_package_data = True,
     install_requires = INSTALL_REQUIRES
     )
           
-rmtree('./src/%s.egg-info' % PACKAGE, True)
