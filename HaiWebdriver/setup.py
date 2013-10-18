@@ -16,20 +16,6 @@ if build:
 VERSION_FILE = '__version__.py'
 SOURCE_DIR   = 'src'
 
-# important for installation procedure (pip install PACKAGE)
-# we will get the PACKAGE name from the __file__ value
-# __file__ format: .../build/HaiAmazon/setup.py
-if not build and not PACKAGE: 
-    path_list = dirname(__file__).split('/')
-    PACKAGE = path_list[len(path_list)-1]
-    # and this part is specific for local installation from dist directory
-    # builds is untared in /tmp directory
-    glob_list = glob.glob(r'%s/%s/Hai*' % (dirname(__file__), SOURCE_DIR))
-    for local in glob_list:
-        if re.match(r'.*/Hai[^\./]*$', local): 
-            path_list = local.split('/')
-            PACKAGE = path_list[len(path_list)-1]
-
 execfile(join(dirname(__file__), SOURCE_DIR, PACKAGE, VERSION_FILE))
 
 
@@ -39,7 +25,7 @@ setup(
     description  = DESCRIPTION,
     author       = AUTHOR,
     author_email = EMAIL,
-    url          = 'https://stash.haivision.com/projects/QUACK/repos/quack/browse/playground/selenium/HaiWebdriver',
+    url          = 'https://github.com/may3450/playground/tree/master/HaiWebdriver',
     license      = 'free',
     package_dir  = { '' : 'src'},
     packages     = [PACKAGE],
