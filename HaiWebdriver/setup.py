@@ -14,7 +14,6 @@ VERSION = '1.1.0'
 AUTHOR = 'QA automation'
 EMAIL = 'qa_automation@hotmail.com'
 DESCRIPTION = 'Test Safari webdriver'
-INSTALL_REQUIRES = [ "HaiSafari == 1.1.0"]
 
 VERSION_FILE = '__version__.py'
 SOURCE_DIR   = 'src'
@@ -34,6 +33,5 @@ setup(
     package_dir  = { '' : 'src'},
     packages     = ['HaiSafari'],
     include_package_data = True,
-    install_requires = INSTALL_REQUIRES
     )
           
